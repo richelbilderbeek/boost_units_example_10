@@ -11,7 +11,7 @@
 #include <boost/units/systems/si/io.hpp>
 #pragma GCC diagnostic pop
 
-int main()
+int main() //!OCLINT sure, this is a long function
 {
   //Question: what will be the increase in angular velocity
   //if three Newton is applied at a distance of 2 meter
@@ -63,7 +63,9 @@ int main()
 
   //Calculate the angular acceleration
   const AngularMomentum am(7.0 * kilogram * meter * meter / radian / second);
-  const AngularAcceleration aa((my_torque / am) * radian * meter * meter * kilogram / second / second / second / joule); //rad/s/s
+  const AngularAcceleration aa(
+    (my_torque / am) * radian * meter * meter * kilogram
+    / second / second / second / joule); //rad/s/s
   std::cout
     << "Angular acceleration = torque / angular momentum\n"
     << "alpha = tau * I\n"
